@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SearchEngine | Admin | Configurations | Detail</title>
+</head>
+<body>
+    <h1>SearchEngine | Admin | Configurations | Detail</h1>
+    <h3><a href="/admin/configurations/">Back</a></h3>
+    {% if not created and action == 'create' %}
+        {{ spider_configuration.name }} is already exist!
+        <br>
+        <a href="/admin/configurations/add/">Click here</a> to recreate a new configuration...
+    {% elif not exists and action == 'query' %}
+        {{ query_name }} doesn't exist!
+        <br>
+        <a href="/admin/configurations/">Click here</a> to see a list of configurations...
+    {% endif %}
+    {% if exists %}
+        <h3>{{ spider_configuration.name }}</h3>
+        <a href="/admin/configurations/edit/?name={{ spider_configuration.name }}">edit</a>
+        <p>{{ spider_configuration.conf }}</p>
+        <p>{{ spider_configuration.custom_settings }}</p>
+        <p>Interval: {{ spider_configuration.interval }}</p>
+        <p>Auto Run: {{ spider_configuration.auto_run }}</p>
+        <form action="/admin/configurations/delete/" method="post">
+            <label for="spider-name">
+                <input type="text" hidden name="spider-name" value="{{ spider_configuration.name }}" id="spider-name">
+            </label>
+            <button type="submit">delete</button>
+        </form>
+    {% endif %}
+</body>
+</html>

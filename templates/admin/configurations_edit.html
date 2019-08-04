@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SearchEngine | Admin | Configurations | Edit</title>
+</head>
+<body>
+    <h1>SearchEngine | Admin | Configurations | Edit</h1>
+    <h3><a href="/admin/configurations/">Back</a></h3>
+    {% if exists %}
+    <form action="/admin/configurations/edit/" method="post">
+        <label for="spider-name">
+            Name:
+            <input type="text" id="spider-name" name="spider-name" value="{{ spider_name }}" readonly>
+        </label>
+        <br>
+        <label for="spider-allowed-domains">
+            Allowed Domains:
+            <textarea id="spider-allowed-domains" name="spider-allowed-domains">{{ spider_allowed_domains }}</textarea>
+        </label>
+        <br>
+        <label for="spider-start-urls">
+            Start Urls:
+            <textarea id="spider-start-urls" name="spider-start-urls">{{ spider_start_urls }}</textarea>
+        </label>
+        <br>
+        <label for="spider-closespider-timeout">
+            Closespider Timeout:
+            <input type="number" id="spider-closespider-timeout" name="spider-closespider-timeout" value="{{ spider_custom_settings.CLOSESPIDER_TIMEOUT }}">
+        </label>
+        <br>
+        <label for="spider-concurrent-items">
+            Concurrent Items:
+            <input type="number" id="spider-concurrent-items" name="spider-concurrent-items" value="{{ spider_custom_settings.CONCURRENT_ITEMS }}">
+        </label>
+        <br>
+        <label for="spider-concurrent-requests">
+            Concurrent Requests:
+            <input type="number" id="spider-concurrent-requests" name="spider-concurrent-requests" value="{{ spider_custom_settings.CONCURRENT_REQUESTS }}">
+        </label>
+        <br>
+        <label for="spider-concurrent-requests-per-ip">
+            Concurrent Requests Per IP:
+            <input type="number" id="spider-concurrent-requests-per-ip" name="spider-concurrent-requests-per-ip" value="{{ spider_custom_settings.CONCURRENT_REQUESTS_PER_IP }}">
+        </label>
+        <br>
+        <label for="spider-cookies-enabled">
+            Cookies Enabled:
+            <select name="spider-cookies-enabled" id="spider-cookies-enabled">
+                {% if spider_custom_settings.COOKIES_ENABLED %}
+                    <option value="0">False</option>
+                    <option value="1" selected>True</option>
+                {% else %}
+                    <option value="0" selected>False</option>
+                    <option value="1">True</option>
+                {% endif %}
+            </select>
+        </label>
+        <br>
+        <label for="spider-depth-limit">
+            Depth Limit:
+            <input type="number" id="spider-depth-limit" name="spider-depth-limit" value="{{ spider_custom_settings.DEPTH_LIMIT }}">
+        </label>
+        <br>
+        <label for="spider-download-timeout">
+            Download Timeout:
+            <input type="number" id="spider-download-timeout" name="spider-download-timeout" value="{{ spider_custom_settings.DOWNLOAD_TIMEOUT }}">
+        </label>
+        <br>
+        <label for="spider-interval">
+            Interval:
+            <input type="number" id="spider-interval" name="spider-interval" value="{{ spider_interval }}">
+        </label>
+        <br>
+        <label for="spider-auto-run">
+            Auto Run:
+            <select name="spider-auto-run" id="spider-auto-run">
+                {% if spider_auto_run %}
+                    <option value="0">No</option>
+                    <option value="1" selected>Yes</option>
+                {% else %}
+                    <option value="0" selected>No</option>
+                    <option value="1">Yes</option>
+                {% endif %}
+            </select>
+        </label>
+        <br>
+        <button type="submit">save</button>
+    </form>
+    {% endif %}
+</body>
+</html>

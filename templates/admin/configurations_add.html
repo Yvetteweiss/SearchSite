@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SearchEngine | Admin | Configurations | Add</title>
+</head>
+<body>
+    <h1>SearchEngine | Admin | Configurations | Add</h1>
+    <h3><a href="/admin/">Back</a></h3>
+    <form action="" method="post">
+        <label for="spider-name">
+            Name:
+            <input type="text" id="spider-name" name="spider-name" value="default">
+        </label>
+        <br>
+        <label for="spider-allowed-domains">
+            Allowed Domains:
+            <textarea id="spider-allowed-domains" name="spider-allowed-domains"></textarea>
+        </label>
+        <br>
+        <label for="spider-start-urls">
+            Start Urls:
+            <textarea id="spider-start-urls" name="spider-start-urls"></textarea>
+        </label>
+        <br>
+        <label for="spider-closespider-timeout">
+            Closespider Timeout:
+            <input type="number" id="spider-closespider-timeout" name="spider-closespider-timeout" value="120">
+        </label>
+        <br>
+        <label for="spider-concurrent-items">
+            Concurrent Items:
+            <input type="number" id="spider-concurrent-items" name="spider-concurrent-items" value="64">
+        </label>
+        <br>
+        <label for="spider-concurrent-requests">
+            Concurrent Requests:
+            <input type="number" id="spider-concurrent-requests" name="spider-concurrent-requests" value="8">
+        </label>
+        <br>
+        <label for="spider-concurrent-requests-per-ip">
+            Concurrent Requests Per IP:
+            <input type="number" id="spider-concurrent-requests-per-ip" name="spider-concurrent-requests-per-ip" value="8">
+        </label>
+        <br>
+        <label for="spider-cookies-enabled">
+            Cookies Enabled:
+            <select name="spider-cookies-enabled" id="spider-cookies-enabled">
+                <option value="0" selected>False</option>
+                <option value="1">True</option>
+            </select>
+        </label>
+        <br>
+        <label for="spider-depth-limit">
+            Depth Limit:
+            <input type="number" id="spider-depth-limit" name="spider-depth-limit" value="1">
+        </label>
+        <br>
+        <label for="spider-download-timeout">
+            Download Timeout:
+            <input type="number" id="spider-download-timeout" name="spider-download-timeout" value="10">
+        </label>
+        <br>
+        <label for="spider-interval">
+            Interval:
+            <input type="number" id="spider-interval" name="spider-interval" value="600">
+        </label>
+        <br>
+        <label for="spider-auto-run">
+            Auto Run:
+            <select name="spider-auto-run" id="spider-auto-run">
+                <option value="0" selected>No</option>
+                <option value="1">Yes</option>
+            </select>
+        </label>
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

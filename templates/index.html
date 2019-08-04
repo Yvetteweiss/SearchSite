@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SearchEngine | DjangoSite</title>
+    <link rel="stylesheet" href="/static/css/init.css">
+    <link rel="stylesheet" href="/static/css/index.css">
+</head>
+<body>
+    <h1>Welcome to use SearchEngine!</h1>
+    <div class="search-form">
+        <form method="post" action="/search/">
+            <div>
+                <label for="search-input">
+                    <input type="text" id="search-input" name="search-input">
+                </label>
+                <label for="search-page">
+                    <input type="number" hidden id="search-page" value="0">
+                </label>
+                <button type="submit">Search</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

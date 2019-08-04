@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SearchEngine | Admin | Jobs</title>
+</head>
+<body>
+    <h1>SearchEngine | Admin | Jobs</h1>
+    <h3><a href="/admin/">Back</a></h3>
+    <table border="2">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>PID</th>
+                <th>Spider</th>
+                <th>Start</th>
+                <th>Runtime</th>
+                <th>Finish</th>
+                <th>Log</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td colspan="7" align="center">Pending</td>
+            </tr>
+        {% for job in pending %}
+            <tr>
+                <td>{{ job.id }}</td>
+                <td></td>
+                <td>{{ job.spider }}</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        {% endfor %}
+            <tr>
+                <td colspan="7" align="center">Running</td>
+            </tr>
+        {% for job in running %}
+            <tr>
+                <td>{{ job.id }}</td>
+                <td>{{ job.pid }}</td>
+                <td>{{ job.spider }}</td>
+                <td>{{ job.start_time }}</td>
+                <td>{{ job.run_time }}</td>
+                <td></td>
+                <td><a href="{{ job.log }}" target="_blank">log</a></td>
+            </tr>
+        {% endfor %}
+            <tr>
+                <td colspan="7" align="center">Finished</td>
+            </tr>
+        {% for job in finished %}
+            <tr>
+                <td>{{ job.id }}</td>
+                <td>{{ job.pid }}</td>
+                <td>{{ job.spider }}</td>
+                <td>{{ job.start_time }}</td>
+                <td>{{ job.run_time }}</td>
+                <td>{{ job.end_time }}</td>
+                <td><a href="{{ job.log }}" target="_blank">log</a></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

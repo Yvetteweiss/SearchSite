@@ -1,0 +1,38 @@
+h1 {
+    font-size: 50px;
+    font-weight: 400;
+    height: 200px;
+    text-align: center;
+    line-height: 200px;
+}
+
+.search-form {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.search-form form {
+    font-size: 16px;
+}
+
+.search-form input {
+    box-sizing: border-box;
+    padding: 2px 5px;
+    letter-spacing: 1px;
+    height: 40px;
+    width: 640px;
+    border-radius: 2px;
+    background: #FDF5E6;
+}
+
+.search-form button {
+    box-sizing: border-box;
+    display: inline-block;
+    padding: 2px 5px;
+    letter-spacing: 1px;
+    height: 40px;
+    margin-left: -4px;
+    background: #FDF5E6;
+    border: none;
+    border-radius: 2px;
+}

@@ -1,0 +1,69 @@
+{% load search_filters %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SearchEngine | Search</title>
+    <link rel="stylesheet" href="/static/css/init.css">
+    <link rel="stylesheet" href="/static/css/search.css">
+</head>
+<body>
+    <div class="search-form">
+        <form method="post" action="/search/">
+            <div>
+                <label for="search-input">
+                    <input type="text" id="search-input" name="search-input" value="{{ search_input }}">
+                </label>
+                <label for="search-page">
+                    <input type="number" hidden id="search-page" name="search-page" value=0>
+                </label>
+                <button type="submit">Search</button>
+            </div>
+        </form>
+    </div>
+    <p>Page {{ search_page }}</p>
+    <div class="search-result">
+        <ul>
+            {% for result in results %}
+                <li>
+                    <a href="{{ result.url }}" target="_blank">
+                        <div class="search-item">
+                            <div class="search-item-title">{{ result.title }}</div>
+                            <div class="search-item-other">
+                                <div class="search-item-domain">{{ result.domain }}</div>
+                                <div class="search-item-update">{{ result.update|time_since }}</div>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+            {% endfor %}
+
+        </ul>
+    </div>
+    <p>Page {{ search_page }}</p>
+    <div class="page-form">
+        <form method="post" action="/search/" style="display: inline-block">
+            <div>
+                <label for="search-input">
+                    <input type="text" id="search-input" name="search-input" value="{{ search_input }}" hidden>
+                </label>
+                <label for="search-page">
+                    <input type="number" hidden id="search-page" name="search-page" value={{ search_page|add:"-1" }}>
+                </label>
+                <button type="submit">Prev</button>
+            </div>
+        </form>
+        <form method="post" action="/search/" style="display: inline-block">
+            <div>
+                <label for="search-input">
+                    <input type="text" id="search-input" name="search-input" value="{{ search_input }}" hidden>
+                </label>
+                <label for="search-page">
+                    <input type="number" hidden id="search-page" name="search-page" value={{ search_page|add:"1" }}>
+                </label>
+                <button type="submit">Next</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SearchEngine | Admin | Configurations</title>
+</head>
+<body>
+    <h1>SearchEngine | Admin | Configurations</h1>
+    <h3><a href="/admin/">Back</a></h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for configuration in spider_configurations %}
+            <tr>
+                <td>
+                    <a href="/admin/configurations/detail/?name={{ configuration.name }}">{{ configuration.name }}</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <h3><a href="/admin/configurations/add/">Add A Configuration</a></h3>
+</body>
+</html>
