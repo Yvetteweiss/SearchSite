@@ -42,7 +42,7 @@
           <entry key="dummy" value="21" />
           <entry key="gitignore" value="18" />
           <entry key="html" value="3889" />
-          <entry key="py" value="7854" />
+          <entry key="py" value="7857" />
           <entry key="py@DjangoSite" value="139" />
         </counts>
       </usages-collector>
@@ -52,7 +52,7 @@
           <entry key="CommandLine" value="139" />
           <entry key="HTML" value="3889" />
           <entry key="PLAIN_TEXT" value="39" />
-          <entry key="Python" value="7854" />
+          <entry key="Python" value="7857" />
         </counts>
       </usages-collector>
     </session>
@@ -62,8 +62,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/../SearchSite/SearchSite/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="570">
-              <caret line="30" column="21" selection-start-line="30" selection-start-column="21" selection-end-line="30" selection-end-column="21" />
+            <state relative-caret-position="304">
+              <caret line="121" column="17" lean-forward="true" selection-start-line="121" selection-start-column="17" selection-end-line="121" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -694,8 +694,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../SearchSite/SearchSite/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="30" column="21" selection-start-line="30" selection-start-column="21" selection-end-line="30" selection-end-column="21" />
+        <state relative-caret-position="304">
+          <caret line="121" column="17" lean-forward="true" selection-start-line="121" selection-start-column="17" selection-end-line="121" selection-end-column="17" />
         </state>
       </provider>
     </entry>
