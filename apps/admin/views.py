@@ -60,8 +60,8 @@ class AddConfigurationView(View):
 
     def post(self, request, *args, **kwargs):
         spider_name = request.POST.get('spider-name')
-        spider_allowed_domains = request.POST.get('spider-allowed-domains')
-        spider_start_urls = request.POST.get('spider-start-urls')
+        spider_allowed_domains = request.POST.get('spider-allowed-domains').replace('\n', '')
+        spider_start_urls = request.POST.get('spider-start-urls').replace('\n', '')
         spider_closespider_timeout = request.POST.get('spider-closespider-timeout')
         spider_concurrent_items = request.POST.get('spider-concurrent-items')
         spider_concurrent_requests = request.POST.get('spider-concurrent-requests')
@@ -71,17 +71,10 @@ class AddConfigurationView(View):
         spider_download_timeout = request.POST.get('spider-download-timeout')
         spider_interval = request.POST.get('spider-interval')
         spider_auto_run = request.POST.get('spider-auto-run')
-        import platform
-        if platform.platform().startswith('Windows'):
-            conf = {
-                'allowed_domains': spider_allowed_domains.split('\r\n'),
-                'start_urls': spider_start_urls.split('\r\n'),
-            }
-        else:
-            conf = {
-                'allowed_domains': spider_allowed_domains.split('\n'),
-                'start_urls': spider_start_urls.split('\n'),
-            }
+        conf = {
+            'allowed_domains': spider_allowed_domains.split('\n'),
+            'start_urls': spider_start_urls.split('\n'),
+        }
         custom_settings = {
             'CLOSESPIDER_TIMEOUT': int(spider_closespider_timeout),
             'CONCURRENT_ITEMS': int(spider_concurrent_items),
@@ -140,8 +133,8 @@ class EditConfigurationView(View):
 
     def post(self, request, *args, **kwargs):
         spider_name = request.POST.get('spider-name')
-        spider_allowed_domains = request.POST.get('spider-allowed-domains')
-        spider_start_urls = request.POST.get('spider-start-urls')
+        spider_allowed_domains = request.POST.get('spider-allowed-domains').replace('\r', '')
+        spider_start_urls = request.POST.get('spider-start-urls').replace('\r', '')
         spider_closespider_timeout = request.POST.get('spider-closespider-timeout')
         spider_concurrent_items = request.POST.get('spider-concurrent-items')
         spider_concurrent_requests = request.POST.get('spider-concurrent-requests')
@@ -151,17 +144,10 @@ class EditConfigurationView(View):
         spider_download_timeout = request.POST.get('spider-download-timeout')
         spider_interval = request.POST.get('spider-interval')
         spider_auto_run = request.POST.get('spider-auto-run')
-        import platform
-        if platform.platform().startswith('Windows'):
-            conf = {
-                'allowed_domains': spider_allowed_domains.split('\r\n'),
-                'start_urls': spider_start_urls.split('\r\n'),
-            }
-        else:
-            conf = {
-                'allowed_domains': spider_allowed_domains.split('\n'),
-                'start_urls': spider_start_urls.split('\n'),
-            }
+        conf = {
+            'allowed_domains': spider_allowed_domains.split('\n'),
+            'start_urls': spider_start_urls.split('\n'),
+        }
         custom_settings = {
             'CLOSESPIDER_TIMEOUT': int(spider_closespider_timeout),
             'CONCURRENT_ITEMS': int(spider_concurrent_items),
